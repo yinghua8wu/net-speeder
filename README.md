@@ -29,10 +29,9 @@ A program to speed up single thread download upon long delay and unstable networ
 
 debian/ubuntu：
 
-    #安装libnet-dev：
-    apt-get install libnet1-dev
-    #安装libpcap-dev：
-    apt-get install libpcap0.8-dev 
+    #安装libnet-dev & 安装libpcap-dev：
+    apt-get update && apt-get install libnet1-dev libpcap0.8-dev gcc -y
+
 
 centos： 
 
@@ -41,8 +40,12 @@ centos：
     #（如果是centos5，则在epel/5/下）
     #安装epel：
     rpm -ivh epel-release-6-8.noarch.rpm
+    
+    # yum clean all && yum makecache
+    yum install epel-release -y
+
     #然后即可使用yum安装：
-    yum install libnet libpcap libnet-devel libpcap-devel
+    yum install libnet libpcap libnet-devel libpcap-devel gcc
 
 编译：
 
